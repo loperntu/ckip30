@@ -256,24 +256,7 @@ At the moment there are 30k units (ranging from characters to lexical chunks) wi
   * 詞彙難易與那些變項有關
   * 詞彙年紀與那些變項有關
 
----
-## Normal Distribution
 
-The normal (or Gaussian) distribution is defined as follows:
-
-$$latex
-f(x;\mu,\sigma^2) = \frac{1}{\sigma\sqrt{2\pi}} 
-e^{ -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2 }
-$$
-
----
-## Density Plot
-
-To generate random draws from a normal distribution we use the **rnorm** function:
-
-```{r block1}
-output <- rnorm(1000, 100, 15);
-```
 
 
 
