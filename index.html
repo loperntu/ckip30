@@ -450,7 +450,7 @@
  <h3>Possible values</h3>
 
 <ul>
-<li>collocates, arguments, ratings, polarity, length, senses, ontological class, pos, estimated ages, discourse markers, ...........</li>
+<li>collocates, arguments, familiarity ratings, polarity, length, senses, ontological class, pos, estimated ages, discourse markers, ...........</li>
 </ul>
 
 </div>
@@ -460,6 +460,39 @@
 </slide>
 
 <slide class="" id="slide-17" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>Affective module as an Example</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><img src = './resources/figures/affective.png' height="100px"></img></p>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-18" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  
+  <article data-timings="">
+    <pre><code class="r">affect &lt;- read.csv(&quot;~/LOPEN/BIGLEXICON/modules/emotion/data/affect.0.csv&quot;)
+View(affect)
+head(str(affect),10)
+</code></pre>
+
+<p><img src = './resources/figures/aff.table.png' height="100px"></img>
+<img src = './resources/figures/aff.str.png' height="100px"></img></p>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-19" style="background:; background-repeat:no-repeat; background-position:center; ">
   
   
   <hgroup>
@@ -483,7 +516,7 @@
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-18" style="background:; background-repeat:no-repeat; background-position:center; ">
+<slide class="" id="slide-20" style="background:; background-repeat:no-repeat; background-position:center; ">
   
   
   <hgroup>
@@ -492,7 +525,7 @@
   
   <article data-timings="">
     <ul>
-<li>[<strong>APIs</strong>] <code>R</code> 的套件 (<code>LexicoR</code>): provides <em>programmable</em> tools for aggregating, exploring, visualizing, and modeling the lexical data, as well as various quantitative measures for working with the data in reproducible manner.</li>
+<li>[<strong>Tools and APIs</strong>] <code>R</code> 的套件 (<code>LexicoR</code>): provides <em>programmable</em> tools for aggregating, exploring, visualizing, and modeling the lexical data, as well as various quantitative measures for working with the data in reproducible manner.</li>
 <li>[<strong>Annotation</strong>] <a href="http://lopen.linguistics.ntu.edu.tw/emilytagger/">標記平台</a> </li>
 <li>[<strong>Market</strong>] <a href="http://140.112.147.131:5000/">資料集散</a></li>
 </ul>
@@ -502,7 +535,7 @@
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-19" style="background:; background-repeat:no-repeat; background-position:center; ">
+<slide class="" id="slide-21" style="background:; background-repeat:no-repeat; background-position:center; ">
   
   
   <hgroup>
@@ -515,8 +548,8 @@
 <li><p>You are now empowered to ask DIFFERENT questions.</p>
 
 <ul>
-<li>詞彙難易與那些變項有關</li>
-<li>詞彙年紀與那些變項有關</li>
+<li><code>詞彙難易</code>與那些變項有關</li>
+<li>那些變項|組合最大地決定了<code>詞彙年齡</code> (存活能力) ? </li>
 </ul></li>
 </ul>
 
@@ -525,45 +558,26 @@
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-20" style="background:; background-repeat:no-repeat; background-position:center; ">
+<slide class="" id="slide-22" style="background:; background-repeat:no-repeat; background-position:center; ">
   
   
   <hgroup>
-    <h2>Normal Distribution</h2>
+    <h2>Modeling the stage of Diffusion, Stabilization, Inactivation of words</h2>
   </hgroup>
   
   <article data-timings="">
-    <p>The normal (or Gaussian) distribution is defined as follows:</p>
-
-<p>\[
-f(x;\mu,\sigma^2) = \frac{1}{\sigma\sqrt{2\pi}} 
-e^{ -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2 }
+    <p>\[
+\min_{\beta_0,\beta} \frac{1}{N}\sum_{i=1}^N w_il(y_i,\beta_0+\beta^Tx_i)+\lambda \left[(1-\alpha) ||\beta||_2^2/2+\alpha||\beta||_1\right]
 \]</p>
 
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-21" style="background:; background-repeat:no-repeat; background-position:center; ">
-  
-  
-  <hgroup>
-    <h2>Density Plot</h2>
-  </hgroup>
-  
-  <article data-timings="">
-    <p>To generate random draws from a normal distribution we use the <strong>rnorm</strong> function:</p>
-
-<pre><code class="r">output &lt;- rnorm(1000, 100, 15);
-</code></pre>
+<p><img src="assets/fig/block2-1.png" alt="plot of chunk block2"> </p>
 
     
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-22" style="background:; background-repeat:no-repeat; background-position:center; ">
+<slide class="" id="slide-23" style="background:; background-repeat:no-repeat; background-position:center; ">
   
   
   <hgroup>
@@ -614,7 +628,7 @@ e^{ -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2 }
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-24" style="background:; background-repeat:no-repeat; background-position:center; ">
+<slide class="" id="slide-25" style="background:; background-repeat:no-repeat; background-position:center; ">
   
   
   <hgroup>
@@ -768,56 +782,62 @@ e^{ -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2 }
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=17 title='Summary: <code>Deep and Big</code> in what sense'>
+        data-slide=17 title='Affective module as an Example'>
          17
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=18 title='Current Development'>
+        data-slide=18 title=''>
          18
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=19 title='DeepLEX-based Applications | 應用'>
+        data-slide=19 title='Summary: <code>Deep and Big</code> in what sense'>
          19
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=20 title='Normal Distribution'>
+        data-slide=20 title='Current Development'>
          20
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=21 title='Density Plot'>
+        data-slide=21 title='DeepLEX-based Applications | 應用'>
          21
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=22 title='The Future is Now, The Sky&#39;s the Limit'>
+        data-slide=22 title='Modeling the stage of Diffusion, Stabilization, Inactivation of words'>
          22
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=23 title='Conclusion'>
+        data-slide=23 title='The Future is Now, The Sky&#39;s the Limit'>
          23
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=24 title='Reference'>
+        data-slide=24 title='Conclusion'>
          24
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=25 title='Acknowledgement'>
+        data-slide=25 title='Reference'>
          25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='Acknowledgement'>
+         26
       </a>
     </li>
   </ul>

@@ -223,9 +223,24 @@ At the moment there are 30k units (ranging from characters to lexical chunks) wi
 *** =right
 ### Possible values
 
- * collocates, arguments, ratings, polarity, length, senses, ontological class, pos, estimated ages, discourse markers, ...........
+ * collocates, arguments, familiarity ratings, polarity, length, senses, ontological class, pos, estimated ages, discourse markers, ...........
 
-   
+
+
+---
+## Affective module as an Example
+
+<img src = './resources/figures/affective.png' height="100px"></img>
+
+
+---
+```{r eval=FALSE}
+affect <- read.csv("~/LOPEN/BIGLEXICON/modules/emotion/data/affect.0.csv")
+View(affect)
+head(str(affect),10)
+```
+<img src = './resources/figures/aff.table.png' height="100px"></img>
+<img src = './resources/figures/aff.str.png' height="100px"></img>
 
 
 ---
@@ -241,7 +256,7 @@ At the moment there are 30k units (ranging from characters to lexical chunks) wi
 --- 
 ## Current Development
 
-* [**APIs**] `R` 的套件 (`LexicoR`): provides *programmable* tools for aggregating, exploring, visualizing, and modeling the lexical data, as well as various quantitative measures for working with the data in reproducible manner.
+* [**Tools and APIs**] `R` 的套件 (`LexicoR`): provides *programmable* tools for aggregating, exploring, visualizing, and modeling the lexical data, as well as various quantitative measures for working with the data in reproducible manner.
 * [**Annotation**] [標記平台](http://lopen.linguistics.ntu.edu.tw/emilytagger/) 
 * [**Market**] [資料集散](http://140.112.147.131:5000/)
 
@@ -253,9 +268,23 @@ At the moment there are 30k units (ranging from characters to lexical chunks) wi
 * Sentiment/Emotion Detection already on the way (Magistry et al. 2015).
 * You are now empowered to ask DIFFERENT questions.
 
-  * 詞彙難易與那些變項有關
-  * 詞彙年紀與那些變項有關
+  * `詞彙難易`與那些變項有關
+  * 那些變項|組合最大地決定了`詞彙年齡` (存活能力) ? 
 
+---
+## Modeling the stage of Diffusion, Stabilization, Inactivation of words
+
+$$latex
+\min_{\beta_0,\beta} \frac{1}{N}\sum_{i=1}^N w_il(y_i,\beta_0+\beta^Tx_i)+\lambda \left[(1-\alpha) ||\beta||_2^2/2+\alpha||\beta||_1\right]
+$$
+
+
+```{r block2, fig.width=8, fig.height=5, echo=FALSE}
+library(glmnet)
+load("QSExample.RData")
+fit = glmnet(x, y)
+plot(fit)
+```
 
 
 
