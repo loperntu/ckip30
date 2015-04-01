@@ -25,7 +25,7 @@ bibliography: /Users/shukai/LOPE_LexInfo/BIB/lope.bib
 
 > 慢慢展開了與計算語言學的相知相愛。
 
-衷心感謝，希望日後不會讓老師失望。
+
 
 
 
@@ -184,7 +184,7 @@ phonetics     | sense        |polarity  |1930.freq    | 3y.freq    |indegree    
 components    | relations    |classes   |1940.freq    | 4y.freq    |----------------|----
 
 
-At the moment there are 30k units (ranging from characters to lexical chunks) with over than 120 variables in total. The scope and size are still evolving, with its concerted and long-term efforts we believe this resource will be valuable for deep processing of natural language processing and intelligent applications.
+At the moment there are 45k units (ranging from characters to lexical chunks) with over than 140 variables. The scope and size are still evolving, with its concerted and long-term efforts we believe this resource will be valuable for deep processing of natural language processing and intelligent applications.
 
 
 
@@ -246,8 +246,8 @@ head(str(affect),10)
 
 ---
 ## Summary: `Deep and Big` in what sense
-* Deep: unlimited dimensions (currently more than 120)
-* Big: *continuous* in units (currently more than 30k)
+* Deep: unlimited dimensions (currently more than 140 indi. variables)
+* Big: *continuous* in units (currently more than 45k lexical units)
   - non-word morpheme
   - lexical chunks: frequent word strings of compositional nature (e.g. don't have to worry)
   - formulaic sequences, idioms, and other multi-word expressions.
@@ -269,11 +269,13 @@ head(str(affect),10)
 * Sentiment/Emotion Detection already on the way (Magistry et al. 2015).
 * You are now empowered to ask DIFFERENT questions.
 
-  * `詞彙難易`與那些變項有關
+  * `詞彙難易`與那些變項有關？
+  * 情緒詞彙的漢字部首/部件組合的關係？
   * 那些變項|組合最大地決定了`詞彙年齡` (存活能力) ? 
+  
 
 ---
-## Modeling the stage of Diffusion, Stabilization, Inactivation of words
+## Modeling the Life Stage of Diffusion, Stabilization, Inactivation of words
 
 $$latex
 \min_{\beta_0,\beta} \frac{1}{N}\sum_{i=1}^N w_il(y_i,\beta_0+\beta^Tx_i)+\lambda \left[(1-\alpha) ||\beta||_2^2/2+\alpha||\beta||_1\right]
@@ -288,7 +290,7 @@ $$
 
 
 ---
-## The Future is Now, The Sky's the Limit
+## The Future is Now, The Sky is the Limit
 
 > * Crowd (-sourced) Annotation 眾標
   - `期待聰明的解法：無相布施 (annotation)`
