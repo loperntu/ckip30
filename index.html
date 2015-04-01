@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DeepLEX</title>
+  <meta charset="utf-8">
+  <meta name="description" content="DeepLEX">
+  <meta name="author" content="謝舒凱 台大語言學研究所">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/quiz/css/demo.css"></link>
+<link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/lope.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>DeepLEX</h1>
+    <h2>A Multi-dimensional Chinese Lexical Resource</h2>
+    <p>謝舒凱 台大語言學研究所<br/>CKIP30 workshop, 2015, Academia Sinica</p>
+  </hgroup>
+  <article></article>  
+  <footer class = 'license'>
+    <a href='http://creativecommons.org/licenses/by-sa/3.0/'>
+    <img width = '80px' src = 'http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png'>
+    </a>
+  </footer>
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="class1" id="id1" style="background:LightGreen; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>Motivation</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <blockquote>
+<p>感謝老師當年收留不才的我進入詞庫，</p>
+
+<p>感謝老師對於沒有貢獻的我包容寬懷，</p>
+
+<p>讓我在無拘無束自由開放的氣氛之下，</p>
+
+<p>慢慢展開了與計算語言學的相知相愛。</p>
+</blockquote>
+
+<p>衷心感謝，希望日後不會讓老師失望。</p>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>詞庫的故事</h2>
+  </hgroup>
+  
+  <article data-timings="">
+      
+<div style='float:left;width:45%' >
+ <ol>
+<li><p><strong>Current Approaches</strong> | 詞彙的心理意義</p>
+
+<ul class = "build incremental">
+<li><p><a href="http://cohmetrix.com/">Coh-Metrix Lexicon</a> [Mcnamara et al., 2014]: Lexical data and measures for text and discourse at different levels, including <a href="http://websites.psychology.uwa.edu.au/school/MRCDatabase/uwa_mrc.htm">MRC Psycholinguistic Database</a> with various properties of words (e.g., age of acquisition, familiarity ratings, concreteness, imagability, Colorado Meaningness, etc), and <a href="http://celex.mpi.nl">CELEX</a> word frequency.</p></li>
+<li><p><a href="http://www.liwc.net">LIWC Lexicon</a> [Pennebaker et. al. 2001; Tausczik et al. 2010]: provides the psychometrics of word usage in various social-psychological contexts. (e.g., linguistic features of deceptive statements).</p></li>
+</ul></li>
+</ol>
+
+</div>    
+<div style='float:right;width:55%'>
+ <p><img src = './resources/figures/lex.png' height="400px"></img></p>
+
+</div>
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>詞庫的故事</h2>
+  </hgroup>
+  
+  <article data-timings="">
+      
+<div style='float:left;width:45%' >
+ <ol>
+<li><p><strong>Current Approaches</strong> 詞彙的心理意義</p>
+
+<ul class = "build incremental">
+<li><p><a href="http://elexicon.wustl.edu/">English Lexicon Project</a>: affords access to a large set of lexical behavioral characteristics from visual lexical decision and naming studies of 40,481 words and 40,481 nonwords. (Also for <a href="http://crr.ugent.be/programs-data/lexicon-projects">Dutch, British, French</a>)</p></li>
+<li><p><a href="http://www.lrec-conf.org/proceedings/lrec2014/pdf/612_Paper.pdf">DysList</a>: a lexicon of dyslexic errors annotated with linguistic, phonetic and visual features.</p></li>
+<li><p class=''>. . . . . . . . . </p></li>
+</ul></li>
+</ol>
+
+</div>    
+<div style='float:right;width:55%'>
+ <p><img src = './resources/figures/lex.png' height="400px"></img></p>
+
+</div>
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>詞庫的故事</h2>
+  </hgroup>
+  
+  <article data-timings="">
+      
+<div style='float:left;width:50%' >
+ <ol>
+<li><p><strong>Current Approaches</strong> | 詞彙的語意與概念</p>
+
+<ul class = "build incremental">
+<li>WordNet</li>
+<li>HowNet</li>
+<li>FrameNet </li>
+<li><a href="http://www.cs.technion.ac.il/%7Egabr/resources/data/wordsim353/wordsim353.html">WordSim353</a> <a href="http://clic.cimec.unitn.it/%7Eelia.bruni/MEN.html">MEN Test Collection</a>: a collection for measuring word similarity or relatedness, contains two sets of English word pairs along with human-assigned similarity judgements.</li>
+<li class=''>. . . . . . . . . </li>
+</ul></li>
+</ol>
+
+</div>    
+<div style='float:right;width:50%'>
+ <p><img src = './resources/figures/lex.png' height="400px"></img></p>
+
+</div>
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>詞庫的故事</h2>
+  </hgroup>
+  
+  <article data-timings="">
+      
+<div style='float:left;width:50%' >
+ <ol>
+<li>Current Approaches</li>
+<li><p><strong>Existing Chinese Lexical Resources</strong></p>
+
+<blockquote>
+<p>*<a href="http://ehownet.iis.sinica.edu.tw/">eHowNet</a></p>
+
+<p>*<a href="http://lope.linguistics.ntu.edu.tw/cwn2">Chinese Wordnet</a></p>
+
+<p>*<a href="http://210.240.188.161/Chinese_CohMetrix/index.html">Chinese Coh-Metrix</a></p>
+
+<p>*<a href="http://cliwc.weebly.com">Chinese LIWC</a></p>
+
+<p>*<a href="http://ball.ling.sinica.edu.tw/namingdatabase/">Traditional Chinese Psycholinguistic Database</a> : provides a large-scale psycholinguistic norm of 3,314 Traditional Chinese characters along with their naming latencies collected from 140 Chinese speakers. </p>
+</blockquote></li>
+</ol>
+
+</div>    
+<div style='float:right;width:50%'>
+ <p><img src = './resources/figures/lex2.png' height="400px"></img></p>
+
+</div>
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6">
+<hgroup>
+  
+</hgroup>
+<article class = 'flexbox vcenter'>
+<p><q>What&#39;s NEXT: <code>Old Wisdom in New World</code></q></p>
+
+<ul class = "build incremental">
+<li>Sustainable</li>
+<li>Reproducible</li>
+<li>Collaborative (w/o pain)</li>
+<li>Open and (thus) linked, decentrailized</li>
+</ul>
+
+</article>
+<!-- Presenter Notes -->
+</slide>
+<slide class="dark segue" id="slide-7" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>大與深 (BIG and DEEP) 可以兼得否？</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>BIG is easy, DEEP is hard</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><img src = './resources/figures/big.png' height="200px"></img></p>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>BIG is easy, DEEP is hard</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <iframe width="70" height="40" src="https://www.youtube.com/embed/yyTx6a7VBjg" frameborder="0" allowfullscreen></iframe>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="quote" id="slide-10" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  
+  <article data-timings="">
+    <p><img src="assets/img/lopen.png" class="logo fit100" /></p>
+
+<h3>(Hsieh at al., 2015. to be submitted)</h3>
+
+<p><q><code>DeepLEX</code>: With its modularized open architecture, it aims to be a <code>fine-grained yet scaled</code> multilingual lexical resource that empowers linguists to pursuit a wide array of previously unanswerable research questions.
+</q></p>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>提醒：詞庫和詞典的基本任務不同</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p><a href="http://hd.cnki.net/kxhd/">線上漢語大詞典與康熙字典</a>
+<img src = './resources/figures/hanyu1.jpg' height="100px"></img>
+<img src = './resources/figures/hanyu2.jpg' height="100px"></img></p>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>DeepLEX: Rationale</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <blockquote>
+<h3>- 不同視野下的詞彙行為/知識表徵化</h3>
+
+<p>Operationalized lexical knowledge representation</p>
+</blockquote>
+
+<p>E.g., 我們不(只)關心「打」的詞義有哪些，更關心</p>
+
+<ul>
+<li>在<code>什麼標準|脈落</code>下「打」的詞義分成幾個；</li>
+<li>這樣的<code>標記訊息</code>(Categorical and/or Numerical) 跟該單位在其他脈絡下被觀察到的行為 (習得，情緒，發展，語言教學，神經表徵，心理反應等) 之間的關聯為何？</li>
+<li>以這樣的第二層知識出發提供「語言學養分」給 NLP/Machine Learning (rather than <code>shallow linguistic feature engineering</code>)</li>
+</ul>
+
+<blockquote>
+<h3>- 任何的努力都應該被記錄</h3>
+
+<p>Reused, Reproduced, Reshaped and Reinforced.</p>
+</blockquote>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>DeepLEX: Assumptions</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul class = "build incremental">
+<li><p>It takes the functional position (usage-based view) in determining units and patterns (in Chinese), as well as the ontological grounding on the relation between linguistic objects and situations (bits of reality). (Langacker 1987, 1988, 1999; Croft 2002; Tomasello 2003; Bybee 2006, 2010)</p></li>
+<li><p>Lexical data at different levels are modularized (only for practical reasons), such as syntax-semantics module, emotion module, discourse and pragmatic module, diachronic module, etc. Researchers from different fields can initiate a new cooperation based upon. </p></li>
+</ul>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>Modules</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <table><thead>
+<tr>
+<th>Hanzi</th>
+<th>Semantics</th>
+<th>Emotion</th>
+<th>Lexical.Age</th>
+<th>Aquisition</th>
+<th>Social Network</th>
+<th>.........</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>phonetics</td>
+<td>sense</td>
+<td>polarity</td>
+<td>1930.freq</td>
+<td>3y.freq</td>
+<td>indegree</td>
+<td>----</td>
+</tr>
+<tr>
+<td>components</td>
+<td>relations</td>
+<td>classes</td>
+<td>1940.freq</td>
+<td>4y.freq</td>
+<td>----------------</td>
+<td>----</td>
+</tr>
+</tbody></table>
+
+<p>At the moment there are 30k units (ranging from characters to lexical chunks) with over than 120 variables in total. The scope and size are still evolving, with its concerted and long-term efforts we believe this resource will be valuable for deep processing of natural language processing and intelligent applications.</p>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>模組化的詞彙知識</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <h3>開放集合</h3>
+  
+<div style='float:left;width:30%' >
+ <ul>
+<li><code>Morpho-Syn-Sem module</code></li>
+<li><code>Affective module</code></li>
+<li><code>Diachronic module</code></li>
+<li><code>Stance module</code></li>
+<li><code>Morphemes (Hanzi) module</code></li>
+<li><code>Frequency module</code></li>
+</ul>
+
+</div>    
+<div style='float:right;width:66%'>
+ 
+</div>
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>模組化的詞彙知識</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <h3>開放集合</h3>
+  
+<div style='float:left;width:30%' >
+ <ul>
+<li><code>Morpho-Syn-Sem</code></li>
+<li><code>Affective module</code></li>
+<li><code>Diachronic module</code></li>
+<li><code>Stance module</code></li>
+<li><code>Morphemes (Hanzi)</code></li>
+<li><code>Frequency module</code></li>
+</ul>
+
+</div>    
+<div style='float:right;width:66%'>
+ <h3>Possible values</h3>
+
+<ul>
+<li>collocates, arguments, ratings, polarity, length, senses, ontological class, pos, estimated ages, discourse markers, ...........</li>
+</ul>
+
+</div>
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>Summary: <code>Deep and Big</code> in what sense</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Deep: unlimited dimensions (currently more than 120)</li>
+<li>Big: <em>continuous</em> in units (currently more than 30k)
+
+<ul>
+<li>non-word morpheme</li>
+<li>lexical chunks: frequent word strings of compositional nature (e.g. don&#39;t have to worry)</li>
+<li>formulaic sequences, idioms, and other multi-word expressions.</li>
+</ul></li>
+</ul>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-18" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>Current Development</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>[<strong>APIs</strong>] <code>R</code> 的套件 (<code>LexicoR</code>): provides <em>programmable</em> tools for aggregating, exploring, visualizing, and modeling the lexical data, as well as various quantitative measures for working with the data in reproducible manner.</li>
+<li>[<strong>Annotation</strong>] <a href="http://lopen.linguistics.ntu.edu.tw/emilytagger/">標記平台</a> </li>
+<li>[<strong>Market</strong>] <a href="http://140.112.147.131:5000/">資料集散</a></li>
+</ul>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-19" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>DeepLEX-based Applications | 應用</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>Sentiment/Emotion Detection already on the way (Magistry et al. 2015).</li>
+<li><p>You are now empowered to ask DIFFERENT questions.</p>
+
+<ul>
+<li>詞彙難易與那些變項有關</li>
+<li>詞彙年紀與那些變項有關</li>
+</ul></li>
+</ul>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>Normal Distribution</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>The normal (or Gaussian) distribution is defined as follows:</p>
+
+<p>\[
+f(x;\mu,\sigma^2) = \frac{1}{\sigma\sqrt{2\pi}} 
+e^{ -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2 }
+\]</p>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>Density Plot</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>To generate random draws from a normal distribution we use the <strong>rnorm</strong> function:</p>
+
+<pre><code class="r">output &lt;- rnorm(1000, 100, 15);
+</code></pre>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-22" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>The Future is Now, The Sky&#39;s the Limit</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul class = "build incremental">
+<li><p>Crowd (-sourced) Annotation 眾標</p>
+
+<ul>
+<li><code>期待聰明的解法：無相布施 (annotation)</code></li>
+</ul></li>
+<li><p>Make it open before make it right </p>
+
+<ul>
+<li><a href="https://www.moedict.tw">萌典</a> 是個好例子。</li>
+</ul></li>
+</ul>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="id1" style="background:yellow; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>Conclusion</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <ul>
+<li>我們需要知道為什麼。</li>
+</ul>
+
+<p>Re-evaluate the role of linguistics/linguistic annotation in the era of Machine Learning.</p>
+
+<ul>
+<li>跨界合作眾志成城的時代已然來臨。</li>
+</ul>
+
+<p><code>Crossover</code> is in: collaboration is needed, Public Sharing is crucial. Time to discover and explore the Wisdom of Linguistic Crowds</p>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-24" style="background:; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>Reference</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <p>[Mcnamara et al,2014] Automated evaluation of text and discourse with Coh-Metrix. Cambridge.</p>
+
+<p>[Pennebaker et al. 2001] Linguistic inquiry and word count: LIWC 2001. <em>Mahway: Lawrence Erlbaum Associates, 71</em>.</p>
+
+<p>[Tausczik et al. 2010] The Psychological Meaning of Words: LIWC and Computerized Text Analysis Methods. <em>Journal of Language and Social Psychology, 29(1) 24–54</em>.</p>
+
+<p>[Chang et al. 2015] A psycholinguistic database for traditional Chinese character naming. <em>Behavior Research Methods</em>.</p>
+
+<p>[Sze et al. 2013] The Chinese Lexicon Project: A repository of lexical decision behavioral responses for 2,500 Chinese characters. <em>Behavior Research Methods.</em></p>
+
+<p>[Magistry et al. 2015] Sentiment Detection in Micro-blogs Using Unsupervised Chunks Extraction. <em>CLSW 2015</em> (accepted). </p>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="id1" style="background:Crimson; background-repeat:no-repeat; background-position:center; ">
+  
+  
+  <hgroup>
+    <h2>Acknowledgement</h2>
+  </hgroup>
+  
+  <article data-timings="">
+    <blockquote>
+<p>王伯雅：歷時模組</p>
+
+<p>呂珮瑜：情緒模組</p>
+
+<p>莊茹涵：語用模組</p>
+
+<p>秦睿謙/林欣霓：漢字模組</p>
+
+<p>CWN2 Group：詞彙語意模組</p>
+
+<p>劉純睿，Pierre Magistry，張瑜芸，施孟賢，. . . . 所有 LOPE lab 的成員！</p>
+</blockquote>
+
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Motivation'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='詞庫的故事'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='詞庫的故事'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='詞庫的故事'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='詞庫的故事'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title=''>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='大與深 (BIG and DEEP) 可以兼得否？'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='BIG is easy, DEEP is hard'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='BIG is easy, DEEP is hard'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title=''>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='提醒：詞庫和詞典的基本任務不同'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='DeepLEX: Rationale'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='DeepLEX: Assumptions'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Modules'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='模組化的詞彙知識'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='模組化的詞彙知識'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Summary: <code>Deep and Big</code> in what sense'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Current Development'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='DeepLEX-based Applications | 應用'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Normal Distribution'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Density Plot'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='The Future is Now, The Sky&#39;s the Limit'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Conclusion'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Reference'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Acknowledgement'>
+         25
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/quiz/js/jquery.quiz.js"></script>
+<script src="libraries/widgets/quiz/js/mustache.min.js"></script>
+<script src="libraries/widgets/quiz/js/quiz-app.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
