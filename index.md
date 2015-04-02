@@ -19,18 +19,6 @@ bibliography: /Users/shukai/LOPE_LexInfo/BIB/lope.bib
 
 > 感謝老師當年收留不才的我進入詞庫，
 
-> 感謝老師對於沒有貢獻的我包容寬懷，
-
-> 讓我在無拘無束自由開放的氣氛之下，
-
-> 慢慢展開了與計算語言學的相知相愛。
-
-
-
-
-
-
-
 
 --- &twocol_dynamic w1:45% w2:55%
 
@@ -310,6 +298,8 @@ Re-evaluate the role of linguistics/linguistic annotation in the era of Machine 
 * 跨界合作眾志成城的時代已然來臨。
 
 `Crossover` is in: collaboration is needed, Public Sharing is crucial. Time to discover and explore the Wisdom of Linguistic Crowds
+
+[Developer mailing list](lopendev@googlegroups.com)
 
 ---
 ## Reference
